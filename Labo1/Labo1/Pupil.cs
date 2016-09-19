@@ -65,8 +65,7 @@ namespace ConsoleApplicationLabo1
         {
             if (title != null)
             {
-                Activity activity = LstActivities.Find(x => x.Name.Equals(title));
-                TabEval[LstActivities.IndexOf(activity)] = evaluation;
+                TabEval[LstActivities.IndexOf(LstActivities.Find(activity => activity.Name.Equals(title)))] = evaluation;
             }
         }
     }

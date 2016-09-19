@@ -29,23 +29,62 @@ namespace ConsoleApplicationLabo1
              System.Console.Write(pupil);
              System.Console.Read();*/
 
-            List<Pupil> lstPupil = new List<Pupil>();
-            lstPupil.Add(new Pupil("Mathieux", 6, 1));
-            lstPupil.Add(new Pupil("Maxime", 9, 3));
-            lstPupil.Add(new Pupil("Alexandre", 7, 1));
-            lstPupil.Add(new Pupil("Jason", 4, 1));
-            lstPupil.Add(new Pupil("Randomer", 5, 2));
+            /*List<Pupil> lstPupil = new List<Pupil>()
+            { 
+                new Pupil("Mathieux", 6, 1),
+                new Pupil("Maxime", 9, 3),
+                new Pupil("Alexandre", 7, 1),
+                new Pupil("Jason", 4, 1),
+                new Pupil("Randomer", 5, 2)
+            };
 
-            var pupilGrade1Plus6 = from pupil in lstPupil
-                                   where pupil.Grade == 1 && pupil.Age >= 6
-                                   select pupil;
-
-            if(pupilGrade1Plus6 != null)
+            List<Person> lstPerson = new List<Person>()
             {
-                foreach(Pupil pupil in pupilGrade1Plus6)
-                {
-                    System.Console.WriteLine(pupil);
-                }
+                new Person("MathieuxP", 6),
+                new Person("MaximeP", 9),
+                new Person("AlexandreP", 7),
+                new Person("JasonP", 4),
+                new Person("RandomerP", 5)
+            };
+
+            var listFusion = lstPerson.Union(lstPupil);
+
+            foreach(Person person in listFusion)
+            {
+                System.Console.WriteLine(person);
+            }*/
+
+            /* var pupilGrade1Plus6 = from pupil in lstPupil
+                                    select pupil;
+
+             pupilGrade1Plus6 = pupilGrade1Plus6.Where(pupil => pupil.Age >= 6 && pupil.Grade == 1);
+
+             if (pupilGrade1Plus6 != null)
+             {
+                 foreach(Pupil pupil in pupilGrade1Plus6)
+                 {
+                     System.Console.WriteLine(pupil);
+                 }
+             }*/
+
+
+            List<Pupil> listPupilsDuplicated = new List<Pupil>()
+            {
+                new Pupil("Mathieux", 6, 1),
+                new Pupil("Maxime", 9, 3),
+                new Pupil("Alexandre", 7, 1),
+                new Pupil("Jason", 4, 1),
+                new Pupil("Randomer", 5, 2),
+                new Pupil("Maxime", 9, 3),
+                new Pupil("Alexandre", 7, 1),
+                new Pupil("Jason", 4, 1),
+            };
+
+            IEnumerable<Pupil> listPupilsNoDuplicated = listPupilsDuplicated.Distinct<Pupil>(new PersonComparer());
+
+            foreach (Pupil pupil in listPupilsNoDuplicated)
+            {
+                System.Console.WriteLine(pupil);
             }
             System.Console.Read();
         }

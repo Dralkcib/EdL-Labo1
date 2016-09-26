@@ -10,24 +10,26 @@ namespace ConsoleApplicationLabo1
     {
         static void Main(string[] args)
         {
-            /* Pupil pupil = new Pupil("Thomas", 8);
-             Activity act1 = new Activity("Mathématiques", true);
-             Activity act2 = new Activity("Français", true);
-             Activity act3 = new Activity("Histoire", false);
-             Activity coloriage = new Activity("Coloriage", true);
+             Pupil pupil = new Pupil("Thomas", 8);
+            Activity act1 = new Activity("Mathématiques", true);
+            Activity act2 = new Activity("Français", true);
+            Activity act3 = new Activity("Histoire", false);
+            Activity coloriage = new Activity("Coloriage", true);
 
 
-             pupil.AddActivity(act1);
-             pupil.AddActivity(act2);
-             pupil.AddActivity(act3);
-             pupil.AddActivity(coloriage);
-             pupil.AddEvaluation("Coloriage");
-             pupil.AddEvaluation(evaluation: 'T', title: "Mathématiques");
+            pupil.AddActivity(act1);
+            pupil.AddActivity(act2);
+            pupil.AddActivity(act3);
+            pupil.AddActivity(coloriage);
+            /*pupil.AddEvaluation("Coloriage");
+            pupil.AddEvaluation(evaluation: 'T', title: "Mathématiques");*/
 
-             System.Console.Write(pupil.TabEval[3]);
 
-             System.Console.Write(pupil);
-             System.Console.Read();*/
+
+            // System.Console.Write(pupil.PupilEvaluations[3]);
+
+             System.Console.Write(pupil.PrintPupilActivityCompulsory(x => x.Name + Environment.NewLine));
+             System.Console.Read();
 
             /*List<Pupil> lstPupil = new List<Pupil>()
             { 
@@ -67,7 +69,7 @@ namespace ConsoleApplicationLabo1
                  }
              }*/
 
-
+            /*
             List<Pupil> listPupilsDuplicated = new List<Pupil>()
             {
                 new Pupil("Mathieux", 6, 1),
@@ -85,8 +87,11 @@ namespace ConsoleApplicationLabo1
             foreach (Pupil pupil in listPupilsNoDuplicated)
             {
                 System.Console.WriteLine(pupil);
-            }
+            }*/
+            
+
             System.Console.Read();
         }
+
     }
 }

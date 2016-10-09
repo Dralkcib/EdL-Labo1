@@ -16,7 +16,8 @@ namespace Labo4.Model
             {
                 new Student("Student 1", 20),
                 new Student("Student 2", 19),
-                new Student("Student 3", 21)
+                new Student("Student 3", 21),
+                new Student("Student 4", 22)
             };
         }
     }

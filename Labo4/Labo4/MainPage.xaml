@@ -8,8 +8,8 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
     DataContext="{Binding Source={StaticResource Locator}, Path= Main}">
-    
-   
+
+
     <Grid x:Name="CommandBarCource" Grid.Row="2">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"></ColumnDefinition>
@@ -17,13 +17,14 @@
         </Grid.ColumnDefinitions>
         <AppBarButton x:Name="EditStudent" Grid.Column="1"
                       Icon="Edit"
-                      Command="{Binding EditStudentCommand}"></AppBarButton>
-        <!--<ListView Grid.Row="1"
+                      Command="{Binding EditStudentCommand}">
+        </AppBarButton>
+        <ListView Grid.Row="1"
               Width="355"
               HorizontalAlignment="Left"
               ItemsSource="{Binding Students, Mode=TwoWay}"
-              SelectedItem="Binding SelectedStudent, Mode=TwoWay"
+              SelectedItem="{Binding SelectedStudent, Mode=TwoWay}"
               Margin="0,35.167,0,-35">
-        </ListView>-->
+        </ListView>
     </Grid>
 </Page>

@@ -16,12 +16,16 @@ namespace Labo4.ViewModel
 {
     public class MainViewModel : ViewModelBase, INotifyPropertyChanged
     {
-        private ObservableCollection<Student> _students;
+        private ObservableCollection<Student> _students = null;
         public ObservableCollection<Student> Students
         {
             get { return _students; }
             set
             {
+                if(_students == value)
+                {
+                    return;
+                }
                 _students = value;
                 RaisePropertyChanged("Students");
             }
@@ -55,6 +59,7 @@ namespace Labo4.ViewModel
         }
 
         private INavigationService _navigationService;
+
         [PreferredConstructor]
         public MainViewModel(INavigationService navigationService = null)
         {
@@ -62,10 +67,10 @@ namespace Labo4.ViewModel
             Students = new ObservableCollection<Student>(AllStudents.GetAllStudents());
         }
 
-        /*public MainViewModel()
+        public MainViewModel()
         {
             Students = new ObservableCollection<Student>(AllStudents.GetAllStudents());
-        }*/
+        }
 
         private void EditStudent()
         {
@@ -77,7 +82,7 @@ namespace Labo4.ViewModel
 
         public bool CanExecute()
         {
-            return !(SelectedStudent == null);
+            return SelectedStudent != null;
         }
     }
 }

@@ -7,11 +7,15 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
-    DataContext="{Binding Source={StaticResource Locator}, Path= Main}">
+    DataContext="{Binding Source={StaticResource Locator}, Path=MainSecond}">
 
-    <StackPanel Orientation="VerticalAlignment"  Margin="0,51.167,0,-51">
+    <StackPanel Orientation="Vertical"  Margin="0,51.167,0,-51">
         <StackPanel Orientation="Horizontal" Height="Auto">
             <TextBlock Text="Nom : " FontSize="20" Width="100"/>
+            <TextBlock Text="{Binding SelectedStudent.Name}" FontSize="20"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Height="Auto">
+            <TextBlock Text="Age : " FontSize="20" Width="100"/>
             <TextBlock Text="{Binding SelectedStudent.Age}" FontSize="20"/>
         </StackPanel>
     </StackPanel>

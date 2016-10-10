@@ -10,7 +10,8 @@
     DataContext="{Binding Source={StaticResource Locator}, Path=Main}">
 
     <Grid>
-        <ListView ItemsSource="{Binding Forecast}" ItemTemplate="{StaticResource WeatherTemplate1}"/>
+        <ListView ItemsSource="{Binding Forecast}" ItemTemplate="{StaticResource WeatherTemplate}"/>
     </Grid>
+
 </Page>
 

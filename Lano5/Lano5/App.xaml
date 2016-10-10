@@ -24,6 +24,7 @@
                     <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding UpdateSourceTrigger, Converter={StaticResource StringConverter}, ConverterParameter='{}{0:dd MMM yyyy}'}" VerticalAlignment="Top"/>
                     <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding WeatherDescription}" VerticalAlignment="top"/>
                     <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="top">
+                        <Run Text="{Binding Date, Converter={StaticResource StringConverter}}"></Run>
                         <Run Text="Min "></Run>
                         <Run Text="{Binding MinTemp}"></Run>
                         <Run Text="°"></Run>

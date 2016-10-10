@@ -21,6 +21,13 @@ namespace Lano5.Converter
             {
                 return value;
             }
+
+            if (value.GetType() == typeof(DateTime))
+            {
+                DateTime date = (DateTime)value;
+                return date.GetDateTimeFormats('D');
+            }
+            
             return String.Format((String)parameter, value);
         }
 
